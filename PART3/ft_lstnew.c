@@ -11,7 +11,13 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-
+//
+typedef struct s_list
+{
+	void			*content;
+	struct s_list	*next;
+}	t_list;
+//
 t_list	*ft_lstnew(void *content)
 {
 	t_list	*node;
@@ -22,4 +28,19 @@ t_list	*ft_lstnew(void *content)
 	node->content = content;
 	node->next = NULL;
 	return (node);
+}
+
+#include <stdio.h>
+
+int main()
+{
+	t_list *node1;
+	t_list *node2;
+	char *s = "alp";
+	int i = 3;
+
+	node1 = ft_lstnew(s);
+	printf("%s\n", (node1->content));
+	node2 = ft_lstnew(&i);
+	printf("%d\n", *(int *)(node2->content));
 }
