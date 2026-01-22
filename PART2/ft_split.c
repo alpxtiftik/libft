@@ -11,6 +11,72 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+//
+//
+size_t	ft_strlen(const char *s)
+{
+	size_t	i;
+
+	i = 0;
+	while (s[i])
+		i++;
+	return (i);
+}
+size_t	ft_strlcpy(char *dst, const char *src, size_t size)
+{
+	size_t	i;
+
+	i = 0;
+	if (size > 0)
+	{
+		while (src[i] && i < size - 1)
+		{
+			dst[i] = src[i];
+			i++;
+		}
+		dst[i] = '\0';
+	}
+	return (ft_strlen(src));
+}
+char	*ft_strdup(const char *s)
+{
+	char	*dest;
+	int		i;
+	int		len;
+
+	len = ft_strlen(s);
+	dest = (char *) malloc(sizeof(char) * (len + 1));
+	if (dest == NULL)
+		return (NULL);
+	i = 0;
+	while (i < len)
+	{
+		dest[i] = s[i];
+		i++;
+	}
+	dest[i] = '\0';
+	return (dest);
+}
+
+char	*ft_substr(char const *s, unsigned int start, size_t len)
+{
+	size_t	s_len;
+	char	*tmp;
+
+	if (!s)
+		return (NULL);
+	s_len = ft_strlen(s);
+	if ((size_t)start >= s_len)
+		return (ft_strdup(""));
+	if (len > s_len - (size_t)start)
+		len = s_len - (size_t)start;
+	tmp = ((char *) malloc(sizeof(char) * (len + 1)));
+	if (!tmp)
+		return (NULL);
+	ft_strlcpy(tmp, s + start, len + 1);
+	return (tmp);
+}
+//
 
 static size_t	count_words(char const *s, char c)
 {
@@ -77,4 +143,29 @@ char	**ft_split(char const *s, char c)
 	if (!fill(sp, s, c, cw))
 		return (NULL);
 	return (sp);
+}
+
+#include <stdio.h>
+
+int main()
+{
+	char *s = "Ahmet Alp Tiftik";
+	char **split = ft_split(s, ' ');
+	int i = 0;
+	while(split[i])
+	{
+		while(split[i])
+		{
+			printf("%s\n", split[i]);
+			i++;
+		}
+	}
+	
+/*
+	printf("%s\n", split[0]);
+	printf("%s\n", split[1]);
+	printf("%s\n", split[2]);
+*/
+	free(split);	
+
 }

@@ -16,3 +16,17 @@ void	ft_putchar_fd(char c, int fd)
 {
 	write(fd, &c, 1);
 }
+
+#include <stdio.h>
+int main()
+{
+	ft_putchar_fd('a', 0);
+	printf("\n");
+	ft_putchar_fd('a', 1);
+	printf("\n");
+	ft_putchar_fd('a', 2);
+	printf("\n");
+	ft_putchar_fd('a', 3);
+	printf("\n");
+	ft_putchar_fd('a', 4);
+}

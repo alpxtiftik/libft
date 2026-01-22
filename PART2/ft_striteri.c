@@ -12,6 +12,19 @@
 
 #include "libft.h"
 
+//
+char f(unsigned int i, char c)
+{
+	if (i % 2 == 0 && (('A' <= c && c <= 'Z') || ('a' <= c && c <= 'z')))
+	{
+		if ('A' <= c && c <= 'Z')
+			return (c + 32);
+		if ('a' <= c && c <= 'z')
+			return (c - 32);
+	}
+	return c;
+}
+//
 void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
 	unsigned int	i;
@@ -24,4 +37,14 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 		f(i, &s[i]);
 		i++;
 	}
+}
+
+#include <stdio.h>
+
+int main()
+{
+	char *s = "ahmet alp tiftik";
+	printf("%s", s);
+	ft_striteri(s, f);
+	printf("%s", s);
 }
