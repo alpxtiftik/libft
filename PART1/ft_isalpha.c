@@ -6,7 +6,7 @@
 /*   By: ahtiftik <ahtiftik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/05 20:44:45 by ahtiftik          #+#    #+#             */
-/*   Updated: 2026/01/05 20:58:20 by ahtiftik         ###   ########.fr       */
+/*   Updated: 2026/01/23 16:51:11 by ahtiftik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,4 +16,12 @@ int	ft_isalpha(int c)
 		return (1);
 	else
 		return (0);
+}
+
+#include <stdio.h>
+
+int main()
+{
+	char s = '_';
+	printf("%d", ft_isalpha(s));
 }

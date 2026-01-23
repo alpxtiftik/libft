@@ -6,12 +6,11 @@
 /*   By: ahtiftik <ahtiftik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/16 21:11:32 by ahtiftik          #+#    #+#             */
-/*   Updated: 2026/01/16 21:27:05 by ahtiftik         ###   ########.fr       */
+/*   Updated: 2026/01/23 16:36:57 by ahtiftik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
 //
 char f(unsigned int i, char c)
 {

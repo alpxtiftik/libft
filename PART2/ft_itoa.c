@@ -6,7 +6,7 @@
 /*   By: ahtiftik <ahtiftik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/16 19:29:56 by ahtiftik          #+#    #+#             */
-/*   Updated: 2026/01/17 14:18:46 by ahtiftik         ###   ########.fr       */
+/*   Updated: 2026/01/23 16:27:26 by ahtiftik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,4 +58,16 @@ char	*ft_itoa(int n)
 		nb = nb / 10;
 	}
 	return (s);
+}
+
+#include <stdio.h>
+#include <limits.h>
+
+int main()
+{
+	char *s;
+
+	s = ft_itoa(INT_MIN);
+	printf("%s", s);
+	free(s);
 }

@@ -6,7 +6,7 @@
 /*   By: ahtiftik <ahtiftik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/05 21:24:46 by ahtiftik          #+#    #+#             */
-/*   Updated: 2026/01/05 21:32:22 by ahtiftik         ###   ########.fr       */
+/*   Updated: 2026/01/23 16:58:37 by ahtiftik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,4 +20,12 @@ size_t	ft_strlen(const char *s)
 	while (s[i])
 		i++;
 	return (i);
+}
+
+#include <stdio.h>
+
+int main()
+{
+	char *s = "ALP";
+	printf("%zu", ft_strlen(s));
 }

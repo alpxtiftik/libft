@@ -6,7 +6,7 @@
 /*   By: ahtiftik <ahtiftik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/15 19:55:07 by ahtiftik          #+#    #+#             */
-/*   Updated: 2026/01/15 19:55:27 by ahtiftik         ###   ########.fr       */
+/*   Updated: 2026/01/23 17:12:13 by ahtiftik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,16 @@
 
 void	*ft_calloc(size_t nmemb, size_t size)
 {
-	size_t	sum;
-	void	*p;
+	void	*ptr;
+	size_t	total_bytes;
 
-	sum = nmemb * size;
-	p = malloc(sum);
-	if (!p)
+	if (nmemb != 0 && size > (size_t)-1 / nmemb)
 		return (NULL);
-	ft_memset(p, 0, sum);
-	return (p);
+
+	total_bytes = nmemb * size;
+	ptr = malloc(total_bytes);
+	if (!ptr)
+		return (NULL);
+	ft_bzero(ptr, total_bytes);
+	return (ptr);
 }

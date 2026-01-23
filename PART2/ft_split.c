@@ -6,12 +6,11 @@
 /*   By: ahtiftik <ahtiftik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/16 17:30:03 by ahtiftik          #+#    #+#             */
-/*   Updated: 2026/01/17 15:14:09 by ahtiftik         ###   ########.fr       */
+/*   Updated: 2026/01/23 16:36:25 by ahtiftik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-//
 //
 size_t	ft_strlen(const char *s)
 {

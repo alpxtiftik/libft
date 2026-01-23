@@ -6,7 +6,7 @@
 /*   By: ahtiftik <ahtiftik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/06 20:53:25 by ahtiftik          #+#    #+#             */
-/*   Updated: 2026/01/06 21:00:30 by ahtiftik         ###   ########.fr       */
+/*   Updated: 2026/01/23 22:00:00 by ahtiftik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,4 +26,11 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 		i++;
 	}
 	return (0);
+}
+int main()
+{
+	char *s1 = "erdogan";
+	char *s2 = "erdalp";
+	
+	printf("%d", ft_strncmp(s1, s2, 4));
 }

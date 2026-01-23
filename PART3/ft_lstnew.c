@@ -6,18 +6,12 @@
 /*   By: ahtiftik <ahtiftik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/17 16:35:25 by ahtiftik          #+#    #+#             */
-/*   Updated: 2026/01/17 16:42:17 by ahtiftik         ###   ########.fr       */
+/*   Updated: 2026/01/23 16:35:46 by ahtiftik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-//
-typedef struct s_list
-{
-	void			*content;
-	struct s_list	*next;
-}	t_list;
-//
+
 t_list	*ft_lstnew(void *content)
 {
 	t_list	*node;

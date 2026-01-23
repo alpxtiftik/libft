@@ -6,7 +6,7 @@
 /*   By: ahtiftik <ahtiftik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/06 19:07:41 by ahtiftik          #+#    #+#             */
-/*   Updated: 2026/01/06 20:11:25 by ahtiftik         ###   ########.fr       */
+/*   Updated: 2026/01/23 21:58:01 by ahtiftik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,4 +26,10 @@ char	*ft_strrchr(const char *s, int c)
 	if (*(unsigned char *)s == (unsigned char)c)
 		return ((char *)s);
 	return (last);
+}
+int main()
+{
+	char *s = "erdoganuludag";
+
+	printf("%p", ft_strrchr(s, 'g'));
 }

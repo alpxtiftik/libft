@@ -6,23 +6,17 @@
 /*   By: ahtiftik <ahtiftik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/17 18:47:00 by ahtiftik          #+#    #+#             */
-/*   Updated: 2026/01/17 18:50:55 by ahtiftik         ###   ########.fr       */
+/*   Updated: 2026/01/23 16:34:31 by ahtiftik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 //
-typedef struct s_list
-{
-	void			*content;
-	struct s_list	*next;
-}	t_list;
-
 t_list	*ft_lstnew(void *content)
 {
 	t_list	*node;
 
-	node = (t_list *) malloc(sizeof(t_list));
+	node = (t_list *)malloc(sizeof(t_list));
 	if (!node)
 		return (NULL);
 	node->content = content;
@@ -48,7 +42,7 @@ void	ft_lstadd_front(t_list **lst, t_list *new)
 	new->next = *lst;
 	*lst = new;
 }
-//
+
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {
 	if (!lst || !new)
@@ -61,13 +55,13 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 	}
 }
 
-void    del(void *content)
+void	del(void *content)
 {
-    free(content);
+	free(content);
 }
-
 //
-void	ft_lstdelone(t_list *lst, void (*del)(void*))
+
+void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
 	if (!lst || !del)
 		return ;
@@ -75,59 +69,58 @@ void	ft_lstdelone(t_list *lst, void (*del)(void*))
 	free(lst);
 }
 
+#include "libft.h" // Libft header'ini eklemeyi unutma
 #include <stdio.h>
 #include <string.h>
-#include "libft.h" // Libft header'ini eklemeyi unutma
 
 // Test için del fonksiyonu
-void del(void *content)
+void	del(void *content)
 {
-    free(content);
+	free(content);
 }
 
-int main()
+int	main(void)
 {
-    t_list *head = NULL;
-    t_list *node1;
-    t_list *node2;
-    t_list *node3;
-    t_list *node4;
+	t_list	*head;
+	t_list	*node1;
+	t_list	*node2;
+	t_list	*node3;
+	t_list	*node4;
+	char	*s1;
+	char	*s2;
+	char	*s3;
+	char	*s4;
 
-    char *s1 = strdup("tiftik");
-    char *s2 = strdup("ahmet");
-    char *s3 = strdup("alp");
-    char *s4 = strdup("silinecek");
-
-    node1 = ft_lstnew(s1);
-    head = node1; // Head artik node1'i gosteriyor (tek yildiz)
-
-    node2 = ft_lstnew(s2);
-    node3 = ft_lstnew(s3);
-    node4 = ft_lstnew(s4);
-
-    ft_lstadd_back(&head, node2);
-    ft_lstadd_back(&head, node3);
-    ft_lstadd_back(&head, node4);
-
-    printf("Deger: %s. Adres:%p\n", (char *)head->content, head); // tiftik
-    printf("Deger: %s. Adres:%p\n", (char *)head->next->content, head->next); // ahmet
-    printf("Deger: %s. Adres:%p\n", (char *)head->next->next->content, head->next->next); // alp
-    printf("Deger: %s. Adres:%p\n", (char *)head->next->next->next->content, head->next->next->next); // silinecek
-
-    // Node4'ü siliyoruz
-    ft_lstdelone(node4, del);
-
-    // Zinciri onariyoruz (node3'un next'ini null yapiyoruz)
-    head->next->next->next = NULL;
-    node4 = NULL; // Dangling pointer'i temizliyoruz
-
-    if (head->next->next->next == NULL)
-        printf("Zincir koptu, artik 4. eleman yok.\n");
-    else
-        printf("Bunu goremezsin.\n");
-        
-    printf("Silindi. Pointer artik NULL: %p\n", node4);
-    
-    return (0);
+	head = NULL;
+	s1 = strdup("tiftik");
+	s2 = strdup("ahmet");
+	s3 = strdup("alp");
+	s4 = strdup("silinecek");
+	node1 = ft_lstnew(s1);
+	head = node1; // Head artik node1'i gosteriyor (tek yildiz)
+	node2 = ft_lstnew(s2);
+	node3 = ft_lstnew(s3);
+	node4 = ft_lstnew(s4);
+	ft_lstadd_back(&head, node2);
+	ft_lstadd_back(&head, node3);
+	ft_lstadd_back(&head, node4);
+	printf("Deger: %s. Adres:%p\n", (char *)head->content,
+		head);                                     // tiftik
+	printf("Deger: %s. Adres:%p\n", (char *)head->next->content,
+		head->next);                         // ahmet
+	printf("Deger: %s. Adres:%p\n", (char *)head->next->next->content,
+		head->next->next);             // alp
+	printf("Deger: %s. Adres:%p\n", (char *)head->next->next->next->content,
+		head->next->next->next); // silinecek
+	// Node4'ü siliyoruz
+	ft_lstdelone(node4, del);
+	// Zinciri onariyoruz (node3'un next'ini null yapiyoruz)
+	head->next->next->next = NULL;
+	node4 = NULL; // Dangling pointer'i temizliyoruz
+	if (head->next->next->next == NULL)
+		printf("Zincir koptu, artik 4. eleman yok.\n");
+	else
+		printf("Bunu goremezsin.\n");
+	printf("Silindi. Pointer artik NULL: %p\n", node4);
+	return (0);
 }
-

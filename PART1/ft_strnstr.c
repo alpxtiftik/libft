@@ -6,7 +6,7 @@
 /*   By: ahtiftik <ahtiftik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/15 19:54:26 by ahtiftik          #+#    #+#             */
-/*   Updated: 2026/01/15 19:54:36 by ahtiftik         ###   ########.fr       */
+/*   Updated: 2026/01/23 22:14:54 by ahtiftik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,4 +33,11 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 		++i;
 	}
 	return (NULL);
+}
+int main()
+{
+	char *big = "erdogan";
+	char *little = "gan";
+	printf("%s", ft_strnstr(big, little, 7));
+	printf("%p", ft_strnstr(big, little, 7));
 }

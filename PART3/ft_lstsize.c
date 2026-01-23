@@ -6,18 +6,12 @@
 /*   By: ahtiftik <ahtiftik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/17 16:49:15 by ahtiftik          #+#    #+#             */
-/*   Updated: 2026/01/17 16:52:39 by ahtiftik         ###   ########.fr       */
+/*   Updated: 2026/01/23 16:36:09 by ahtiftik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-typedef struct s_list
-{
-	void			*content;
-	struct s_list	*next;
-}	t_list;
-
+//
 t_list	*ft_lstnew(void *content)
 {
 	t_list	*node;
@@ -37,6 +31,7 @@ void	ft_lstadd_front(t_list **lst, t_list *new)
 	new->next = *lst;
 	*lst = new;
 }
+//
 
 int	ft_lstsize(t_list *lst)
 {

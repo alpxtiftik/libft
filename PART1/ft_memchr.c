@@ -6,7 +6,7 @@
 /*   By: ahtiftik <ahtiftik@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/06 21:03:51 by ahtiftik          #+#    #+#             */
-/*   Updated: 2026/01/06 21:03:59 by ahtiftik         ###   ########.fr       */
+/*   Updated: 2026/01/23 22:07:48 by ahtiftik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,4 +25,12 @@ void	*ft_memchr(const void *s, int c, size_t n)
 		n--;
 	}
 	return (NULL);
+}
+int main()
+{
+	char s[5] = "abcde";
+
+	void *x = ft_memchr(s, 'e', 5);
+	printf("%p", ((char *)x));
+
 }
